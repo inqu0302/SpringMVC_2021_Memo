@@ -29,7 +29,7 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.id.new_generator_mapping">true</prop>
-                <prop key="hibernate.hdm2ddl.auto">create</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
         </property>
     </bean>
