@@ -72,3 +72,23 @@ footer{
     padding: 0.8rem;
     text-align: center;
 }
+
+section.memo_list{
+    width: 80%;
+    margin: 5px auto;
+    height: 80vh;
+}
+
+table th, table td{
+    border-top: #333;
+    border-bottom: #eee;
+
+    border: 1px solid;
+    boder-spacing: none;
+}
+
+table tbody tr:hover{
+    background-color: #aaaaaa;
+    cursor: pointer;
+}
+

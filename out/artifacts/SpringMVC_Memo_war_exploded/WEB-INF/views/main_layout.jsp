@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="${rootPath}/static/main.css?var=2021-11-23-001" rel="stylesheet">
+    <link href="${rootPath}/static/main.css?var=2021-11-25-002" rel="stylesheet">
     <title>MEMO List</title>
 </head>
 <body>

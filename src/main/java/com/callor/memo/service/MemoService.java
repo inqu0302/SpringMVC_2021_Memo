@@ -9,7 +9,7 @@ public interface MemoService {
     public List<MemoVO> selectAll();
     public MemoVO findById(Long seq);
 
-    public void insert(MemoVO memo);
+    public void insert(MemoVO memo) throws Exception;
     public void update(MemoVO memo);
     public void delete(Long seq);
 

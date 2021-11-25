@@ -1,6 +1,7 @@
 package com.callor.memo.controller;
 
 import com.callor.memo.models.MemoVO;
+import com.callor.memo.service.FileService;
 import com.callor.memo.service.MemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -8,12 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Controller
@@ -46,15 +45,14 @@ public class MainController {
         return "memo/write";
     }
 
-    @RequestMapping(value="/fetch", method=RequestMethod.POST, produces = "application/text; charset=UTF-8")
-    public String write(@RequestBody Map<String, String> maps){
+    @RequestMapping(value="/writer", method=RequestMethod.POST)
+    public String writer(@RequestBody MemoVO memoVO){
 
-        log.debug("fetch 로 전송");
-        log.debug("Map {} ", maps.toString());
-        log.debug("seq {} ",maps.get("seq"));
-        log.debug("author {} ",maps.get("author"));
+        log.debug(memoVO.toString());
 
-        return "redirect:/list";
+        memoServiceV1.insert(memoVO);
+
+        return "memo/wirte";
     }
 
     @RequestMapping(value="/list", method=RequestMethod.GET)
@@ -65,5 +63,43 @@ public class MainController {
         model.addAttribute("M_LIST", MemoVO);
 
         return "memo/list";
+    }
+
+    @RequestMapping(value="detail", method=RequestMethod.GET)
+    public String detail(String seq, Model model, MemoVO memoVO){
+
+        log.debug("seq {} ",seq);
+
+        memoVO = memoServiceV1.findById(Long.valueOf(seq));
+
+        log.debug("memoVO {}", memoVO.toString());
+
+        model.addAttribute("M_LIST",memoVO);
+
+        return "memo/detail";
+    }
+
+    @RequestMapping(value="delete", method=RequestMethod.GET)
+    public String delete(String seq){
+
+        log.debug("seq {} ",seq);
+
+        memoServiceV1.delete(Long.valueOf(seq));
+
+        return "redirect:/list";
+    }
+
+    @RequestMapping(value="update", method=RequestMethod.GET)
+    public String update(String seq, Model model, MemoVO memoVO){
+
+        log.debug("seq {} ",seq);
+
+        memoVO = memoServiceV1.findById(Long.valueOf(seq));
+
+        log.debug("memoVO {}", memoVO.toString());
+
+        model.addAttribute("M_LIST",memoVO);
+
+        return "memo/write";
     }
 }

@@ -3,6 +3,7 @@ package com.callor.memo.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -33,4 +34,7 @@ public class MemoVO {
 
     @Column(name="m_image", columnDefinition = "VARCHAR(125)")
     private String m_image;
+
+    
+    List<FileDTO> fileList;
 }
