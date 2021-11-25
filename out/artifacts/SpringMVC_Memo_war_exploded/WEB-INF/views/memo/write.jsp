@@ -4,11 +4,11 @@
 
 <form method="POST" enctype="multipart/form-data">
     <div class="input_box">
-        <ul>작성자 <input type="text" name="m_author" value="inqu0302@naver.com" /></ul>
-        <ul>작성일자 <input type="date" name="m_date" id="date" value="${DATE}"/></ul>
-        <ul>작성시각 <input type="time" name="m_time" id="time" value="${TIME}"/></ul>
-        <ul>메모 <input type="text" name="m_memo" value="${M_LIST.m_memo}"/></ul>
-        <ul>이미지파일 <input type="file" name="m_image" value="${M_LIST.m_image}"/></ul>
+        <ul>작성자<input type="text" name="m_author" value="inqu0302@naver.com" /></ul>
+        <ul>작성일자<input type="date" name="m_date" id="date" value="${DATE}"/></ul>
+        <ul>작성시각<input type="time" name="m_time" id="time" value="${TIME}"/></ul>
+        <ul>메모<input type="text" name="m_memo" value="${M_LIST.m_memo}"/></ul>
+        <ul>이미지파일<input type="file" name="m_image" value="${M_LIST.m_image}"/></ul>
     </div>
     <div class="btn_box">
         <button class="btn_save" type="button">저장</button>
@@ -78,7 +78,7 @@
                 body:jsonString,
                 headers:{
                     "Accept" : "application/json",
-                    "content-Type" : "application/json; charset=UTF-8"
+                    "content-Type" : "application/json; charset=UTF-8;"
                 }
             })
 

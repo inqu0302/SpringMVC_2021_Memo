@@ -22,8 +22,11 @@ header{
     text-shadow: 2px 2px 2px black;
 }
 
-section.content{
+section{
     flex: 1;
+    width: 80%;
+    height: 75vh;
+    margin: 20px auto;
 }
 
 form {
@@ -54,16 +57,20 @@ div.btn_box button{
     border: none;
 }
 
-button.btn_save{
+button.btn_save, button.btn_insert{
     background-color: dodgerblue;
 }
 
-button.btn_reset{
+button.btn_reset, button.btn_delete{
     background-color: orangered;
 }
 
 button.btn_list{
     background-color: yellowgreen;
+}
+
+button.btn_update{
+    background-color: orange;
 }
 
 footer{
@@ -73,22 +80,4 @@ footer{
     text-align: center;
 }
 
-section.memo_list{
-    width: 80%;
-    margin: 5px auto;
-    height: 80vh;
-}
-
-table th, table td{
-    border-top: #333;
-    border-bottom: #eee;
-
-    border: 1px solid;
-    boder-spacing: none;
-}
-
-table tbody tr:hover{
-    background-color: #aaaaaa;
-    cursor: pointer;
-}
 

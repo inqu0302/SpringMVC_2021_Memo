@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.text.SimpleDateFormat;
@@ -46,10 +47,9 @@ public class MainController {
     }
 
     @RequestMapping(value="/writer", method=RequestMethod.POST)
-    public String writer(@RequestBody MemoVO memoVO){
+    public String writer(@RequestBody MemoVO memoVO) throws Exception {
 
         log.debug(memoVO.toString());
-
         memoServiceV1.insert(memoVO);
 
         return "memo/wirte";
@@ -65,7 +65,7 @@ public class MainController {
         return "memo/list";
     }
 
-    @RequestMapping(value="detail", method=RequestMethod.GET)
+    @RequestMapping(value="/detail", method=RequestMethod.GET)
     public String detail(String seq, Model model, MemoVO memoVO){
 
         log.debug("seq {} ",seq);

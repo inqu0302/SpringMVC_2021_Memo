@@ -36,11 +36,11 @@ public class MemoServiceImplV1 implements MemoService {
     @Override
     public void insert(MemoVO memo) throws Exception {
 
-        MultipartFile image = (MultipartFile) memo.getM_image();
+        //MultipartFile image = (MultipartFile) memo.getM_image();
 
-        String strUUID = fileService.fileUp(image);
+       // String strUUID = fileService.fileUp(image);
 
-        memo.setM_image(strUUID);
+       // memo.setM_image(strUUID);
         mDao.save(memo);
 
     }

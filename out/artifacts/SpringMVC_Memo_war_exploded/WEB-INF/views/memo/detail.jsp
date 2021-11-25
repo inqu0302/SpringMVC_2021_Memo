@@ -2,28 +2,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}"/>
 
-<section class="memo_list">
-    <table>
-        <thead>
-            <tr>
-                <th>일련번호</th>
-                <th>메모내용</th>
-                <th>작성자</th>
-                <th>작성일자</th>
-                <th>작성시각</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr data-seq="${M_LIST.m_seq}" >
-                <td>${M_LIST.m_seq}</td>
-                <td>${M_LIST.m_memo}</td>
-                <td>${M_LIST.m_author}</td>
-                <td>${M_LIST.m_date}</td>
-                <td>${M_LIST.m_time}</td>
-                <td>${M_LIST.m_image}</td>
-            </tr>
-        </tbody>
-    </table>
+<section class="memo_detail">
+    <div>
+        <h3>일변번호 : ${M_LIST.m_seq}
+        <h3>작성자 : ${M_LIST.m_author}</h3>
+        <h3>작성 일자 : ${M_LIST.m_date}</h3>
+        <h3>작성 시각 : ${M_LIST.m_time}</h3>
+        <h3>작성 내용 : ${M_LIST.m_memo}</h3>
+        <h3>첨부 이미지 ${M_LIST.m_image}</h3>
+    </div>
+
     <div class="btn_box">
         <button class="btn_update">수정</button>
         <button class="btn_delete">삭제</button>
